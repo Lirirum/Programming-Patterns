@@ -1,6 +1,7 @@
 ﻿using Abstract_Factory;
 using Adapter;
 using Decorator;
+using Facade;
 using Factory;
 using Iterator;
 using Observer;
@@ -112,5 +113,19 @@ static void Iterator()
         Console.WriteLine(file);
     }
 
+}
+
+static void Facade()
+{
+
+    OrderFacade orderFacade = new OrderFacade(20);
+    Customer customer1 = new Customer("Іван", "Київ, вул. Хрещатик, 1", 60000);
+    Customer customer2 = new Customer("Марія", "Львів, вул. Франка, 10", 60000);
+    Product product1 = new Product("Ноутбук ASUS TUF Gaming A17", 53000, 1);
+    Product product2 = new Product("Мобільний телефон Apple iPhone 16 Pro 256GB", 57999, 2);
+
+
+    orderFacade.PlaceOrder(customer1, product1);
+    orderFacade.PlaceOrder(customer2, product2);
 }
 
